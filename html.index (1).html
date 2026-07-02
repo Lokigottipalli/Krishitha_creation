@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishitha Creations — Tailored Elegance, Made for You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest">
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50:'#e8ecf4', 100:'#c5cfe3', 200:'#9dafd0', 300:'#758fbd', 400:'#4d6faa', 500:'#1a2744', 600:'#15203a', 700:'#0f1a30', 800:'#0a1628', 900:'#050b14' },
+            peach: { 50:'#fef5f0', 100:'#fce8db', 200:'#f8cfc0', 300:'#f4b8a0', 400:'#f09a7e', 500:'#ec7c5c', 600:'#d4603f', 700:'#b04a32', 800:'#8c3a26', 900:'#6a2c1c' },
+            gold:  { 50:'#faf6ee', 100:'#f5e6cc', 200:'#e8c98a', 300:'#d4af5e', 400:'#c9a96e', 500:'#b8943e', 600:'#9a7a2e', 700:'#7c6122', 800:'#5e4918', 900:'#40320f' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim-up { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+    .d1 { animation-delay: .1s } .d2 { animation-delay: .2s } .d3 { animation-delay: .3s }
+    .d4 { animation-delay: .4s } .d5 { animation-delay: .5s } .d6 { animation-delay: .6s }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: all .7s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes float { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-12px) } }
+    .float { animation: float 4s ease-in-out infinite; }
+
+    @keyframes shimmer { 0%{ background-position:-200% 0 } 100%{ background-position:200% 0 } }
+    .shimmer { background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,.08) 50%, transparent 70%); background-size: 200% 100%; animation: shimmer 3s infinite; }
+
+    .text-gold-gradient { background: linear-gradient(135deg, #c9a96e, #e8c98a, #c9a96e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .text-peach-gradient { background: linear-gradient(135deg, #f4b8a0, #fce8db, #f4b8a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .glass { background: rgba(26, 39, 68, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+    .glass-light { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+
+    .btn-gold { background: linear-gradient(135deg, #c9a96e, #b8943e); color: #0a1628; font-weight: 600; transition: all .2s; box-shadow: 0 0 30px -8px rgba(201,169,110,0.5); }
+    .btn-gold:hover { box-shadow: 0 0 40px -5px rgba(201,169,110,0.7); transform: translateY(-1px); }
+
+    .btn-peach { background: linear-gradient(135deg, #f4b8a0, #ec7c5c); color: #0a1628; font-weight: 600; transition: all .2s; box-shadow: 0 0 30px -8px rgba(244,184,160,0.4); }
+    .btn-peach:hover { box-shadow: 0 0 40px -5px rgba(244,184,160,0.6); transform: translateY(-1px); }
+
+    .card-hover { transition: all .3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -15px rgba(0,0,0,0.5); border-color: rgba(201,169,110,0.3); }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a1628; }
+    ::-webkit-scrollbar-thumb { background: #1a2744; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2a3a5a; }
+
+    .chat-bubble-ai { background: linear-gradient(135deg, rgba(26,39,68,0.9), rgba(15,26,48,0.95)); border: 1px solid rgba(201,169,110,0.2); }
+    .chat-bubble-user { background: linear-gradient(135deg, #c9a96e, #b8943e); color: #0a1628; }
+
+    .gallery-item { overflow: hidden; }
+    .gallery-item img { transition: transform .5s ease; }
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    .tab-active { color: #c9a96e; border-color: #c9a96e; }
+    .tab-inactive { color: #9dafd0; border-color: transparent; }
+    .tab-inactive:hover { color: #f4b8a0; }
+
+    @keyframes pulse-dot { 0%,100%{ opacity:1 } 50%{ opacity:.4 } }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #c9a96e !important; box-shadow: 0 0 0 3px rgba(201,169,110,0.15); }
+  
+    @keyframes whatsapp-pulse {
+      0% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7), 0 0 0 10px rgba(37,211,102,0.08); }
+      100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+    }
+</style>
+</head>
+
+<body class="bg-navy-800 text-white antialiased overflow-x-hidden">
+
+  <!-- ====== FULL-PAGE GALAXY STARFIELD BACKGROUND ====== -->
+  <canvas id="galaxy-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- Content wrapper to sit above galaxy -->
+  <div id="content-wrapper" style="position:relative;z-index:1;">
+
+  <!-- ====== NAVBAR ====== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-all duration-300" style="background:rgba(10,22,40,0.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.05);">
+    <div class="max-w-7xl mx-auto w-full px-6 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-800 font-bold text-lg font-display">K</div>
+        <div>
+          <span class="text-base font-display font-semibold tracking-wide text-gold-300">Krishitha</span>
+          <span class="block text-[10px] uppercase tracking-[0.2em] text-peach-300/70 -mt-0.5">Creations</span>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#home" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">Home</a>
+        <a href="#categories" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">Categories</a>
+        <a href="#portfolio" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">Portfolio</a>
+        <a href="#ai-assistant" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">AI Stylist</a>
+        <a href="#order" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">Order</a>
+        <a href="#reviews" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">Reviews</a>
+        <a href="#about" class="text-sm text-navy-200 hover:text-gold-300 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/919032130064?text=Hi%20Krishitha%20Creations!%20I%20want%20to%20discuss%20a%20design." target="_blank" class="hidden sm:inline-flex items-center gap-2 btn-gold text-xs px-5 py-2.5 rounded-lg">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Talk to Designer
+        </a>
+        <button id="mob-toggle" class="lg:hidden text-navy-200 hover:text-gold-300 transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      </div>
+    </div>
+    <div id="mob-menu" class="hidden absolute top-16 left-0 right-0 bg-navy-700/95 backdrop-blur-xl border-b border-white/5 lg:hidden">
+      <div class="px-6 py-4 flex flex-col gap-1">
+        <a href="#home" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5 border-b border-white/5">Home</a>
+        <a href="#categories" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5 border-b border-white/5">Categories</a>
+        <a href="#portfolio" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5 border-b border-white/5">Portfolio</a>
+        <a href="#ai-assistant" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5 border-b border-white/5">AI Stylist</a>
+        <a href="#order" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5 border-b border-white/5">Order</a>
+        <a href="#reviews" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5 border-b border-white/5">Reviews</a>
+        <a href="#about" class="mob-link text-sm text-navy-200 hover:text-gold-300 py-2.5">About & Policies</a>
+        <a href="https://wa.me/919032130064" target="_blank" class="btn-gold text-sm text-center py-3 rounded-lg mt-3">Talk to Designer</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Galaxy starfield is the full-page fixed canvas -->
+    <!-- Overlay gradients to blend galaxy with content -->
+    <div class="absolute inset-0 z-[2]">
+      <div class="absolute inset-0 bg-gradient-to-r from-navy-800/95 via-navy-800/80 to-navy-800/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-800 via-transparent to-navy-800/50"></div>
+    </div>
+    <!-- Decorative -->
+    <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-peach-300/10 rounded-full blur-[120px] z-[2]"></div>
+    <div class="absolute bottom-1/4 left-1/6 w-[300px] h-[300px] bg-gold-400/8 rounded-full blur-[100px] z-[2]"></div>
+
+    <div class="relative z-[3] max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="anim-up inline-flex items-center gap-2 glass-light rounded-full px-4 py-1.5 mb-8">
+          <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
+          <span class="text-[11px] font-medium text-navy-200 uppercase tracking-widest">Now Accepting Orders</span>
+        </div>
+        <h1 class="anim-up d1 font-display text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.08] tracking-tight mb-6">
+          <span class="text-gold-gradient">Tailored Elegance,</span><br>
+          <span class="text-white">Made for</span>
+          <span class="text-peach-gradient"> You.</span>
+        </h1>
+        <p class="anim-up d2 text-base md:text-lg font-light text-navy-200/80 leading-relaxed max-w-lg mb-10">
+          From stunning saree blouses to dreamy lehengas and everyday kurtis — every stitch at Krishitha Creations is woven with love, precision, and your unique style.
+        </p>
+        <div class="anim-up d3 flex flex-wrap gap-4">
+          <a href="#order" class="btn-gold inline-flex items-center gap-2 text-sm px-8 py-3.5 rounded-lg">
+            Place Order <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#portfolio" class="inline-flex items-center gap-2 glass-light text-sm text-peach-200 hover:text-white px-8 py-3.5 rounded-lg transition-colors">
+            <i data-lucide="play" class="w-4 h-4"></i> View Portfolio
+          </a>
+        </div>
+        <!-- Stats -->
+        <div class="anim-up d4 flex gap-8 mt-14 pt-8 border-t border-white/5">
+          <div><span class="text-2xl font-semibold text-gold-300 font-display">500+</span><p class="text-xs text-navy-300 mt-1">Happy Clients</p></div>
+          <div><span class="text-2xl font-semibold text-peach-300 font-display">1200+</span><p class="text-xs text-navy-300 mt-1">Outfits Crafted</p></div>
+          <div><span class="text-2xl font-semibold text-gold-300 font-display">4.9★</span><p class="text-xs text-navy-300 mt-1">Customer Rating</p></div>
+        </div>
+      </div>
+      <!-- Hero Image Card -->
+      <div class="anim-up d4 hidden lg:block">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-gold-400/20 to-peach-300/10 rounded-3xl blur-2xl"></div>
+          <div class="relative glass rounded-2xl overflow-hidden">
+            <img src="https://picsum.photos/seed/krishitha-model-blouse/600/750.jpg" alt="Tailored outfit" class="w-full h-[520px] object-cover">
+            <div class="absolute bottom-0 left-0 right-0 p-6" style="background:linear-gradient(to top,rgba(10,22,40,0.95),transparent);">
+              <p class="text-xs text-gold-400 uppercase tracking-widest mb-1">Latest Creation</p>
+              <p class="font-display text-lg text-white">Designer Silk Blouse</p>
+              <p class="text-xs text-navy-300 mt-1">Hand-embroidered • Custom fitted</p>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -left-4 glass rounded-xl p-4 float" style="animation-delay:1s;">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i></div>
+              <div><p class="text-xs font-medium text-white">Order Delivered</p><p class="text-[10px] text-navy-300">Just now • Chennai</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CATEGORIES ====== -->
+  <section id="categories" class="py-24 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Our Collections</span>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold mt-3 tracking-tight">Shop by <span class="text-gold-gradient">Category</span></h2>
+        <p class="text-navy-300 mt-4 max-w-xl mx-auto text-sm">Every piece is handcrafted to flatter your unique body shape and personal style.</p>
+      </div>
+
+      <!-- Women's Wear -->
+      <div class="mb-16">
+        <h3 class="reveal font-display text-xl text-peach-200 mb-6 flex items-center gap-3">
+          <i data-lucide="crown" class="w-5 h-5 text-peach-300"></i> Women's Wear
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/saree-blouse-kc/400/500.jpg" alt="Sarees" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Sarees</p><p class="text-[11px] text-navy-400 mt-0.5">Blouse · Draping · Styling</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.05s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/lehenga-design-kc/400/500.jpg" alt="Lehengas" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Lehengas</p><p class="text-[11px] text-navy-400 mt-0.5">Bridal · Festive · Custom</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.1s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/kurti-stitch-kc/400/500.jpg" alt="Kurtis" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Kurtis</p><p class="text-[11px] text-navy-400 mt-0.5">Straight · A-line · Anarkali</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.15s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/gown-evening-kc/400/500.jpg" alt="Gowns" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Gowns</p><p class="text-[11px] text-navy-400 mt-0.5">Evening · Party · Cocktail</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.2s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/casual-wear-kc/400/500.jpg" alt="Casual Wear" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Casual Wear</p><p class="text-[11px] text-navy-400 mt-0.5">Daily · Office · Comfort</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Children's Wear -->
+      <div>
+        <h3 class="reveal font-display text-xl text-peach-200 mb-6 flex items-center gap-3">
+          <i data-lucide="baby" class="w-5 h-5 text-peach-300"></i> Children's Wear
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/kids-lehenga-kc/400/500.jpg" alt="Kids Lehenga" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Kids Lehenga</p><p class="text-[11px] text-navy-400 mt-0.5">Festive · Ceremony</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.05s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/kids-kurti-kc/400/500.jpg" alt="Kids Kurti" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Kids Kurti</p><p class="text-[11px] text-navy-400 mt-0.5">Daily · Party Wear</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.1s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/kids-gown-kc/400/500.jpg" alt="Kids Gown" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Kids Gown</p><p class="text-[11px] text-navy-400 mt-0.5">Birthday · Special</p></div>
+          </div>
+          <div class="reveal card-hover glass-light rounded-xl overflow-hidden cursor-pointer group" style="transition-delay:.15s">
+            <div class="gallery-item"><img src="https://picsum.photos/seed/kids-ethnic-kc/400/500.jpg" alt="Kids Ethnic" class="w-full h-48 object-cover"></div>
+            <div class="p-4"><p class="text-sm font-medium text-white group-hover:text-gold-300 transition-colors">Ethnic Sets</p><p class="text-[11px] text-navy-400 mt-0.5">Dhoti · Sherwani · More</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PORTFOLIO GALLERY ====== -->
+  <section id="portfolio" class="py-24 relative" style="background:linear-gradient(180deg,rgba(10,22,40,0),rgba(15,26,48,0.5),rgba(10,22,40,0));">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Our Work</span>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold mt-3 tracking-tight">Design <span class="text-peach-gradient">Portfolio</span></h2>
+        <p class="text-navy-300 mt-4 max-w-xl mx-auto text-sm">Browse our handcrafted creations, AI-styled previews, and social media highlights.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10 reveal">
+        <button onclick="switchGalleryTab('tailored')" id="tab-tailored" class="tab-btn tab-active text-xs uppercase tracking-wider px-5 py-2 border-b-2 transition-all duration-200">Tailored Clothes</button>
+        <button onclick="switchGalleryTab('fabricated')" id="tab-fabricated" class="tab-btn tab-inactive text-xs uppercase tracking-wider px-5 py-2 border-b-2 transition-all duration-200">Fabricated Outfits</button>
+        <button onclick="switchGalleryTab('reels')" id="tab-reels" class="tab-btn tab-inactive text-xs uppercase tracking-wider px-5 py-2 border-b-2 transition-all duration-200">Reels & Videos</button>
+        <button onclick="switchGalleryTab('ai')" id="tab-ai" class="tab-btn tab-inactive text-xs uppercase tracking-wider px-5 py-2 border-b-2 transition-all duration-200">AI Model Previews</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Items injected by JS -->
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <a href="https://instagram.com/_krishitha_creation" target="_blank" class="inline-flex items-center gap-2 text-sm text-gold-400 hover:text-gold-300 transition-colors">
+          View all on Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== AI ASSISTANT ====== -->
+  <section id="ai-assistant" class="py-24 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-peach-300/30 to-transparent"></div>
+    <div class="absolute top-1/2 left-0 w-72 h-72 bg-gold-400/5 rounded-full blur-[100px]"></div>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-flex items-center gap-2 glass-light rounded-full px-4 py-1.5 mb-6">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span class="text-[11px] font-medium text-gold-300 uppercase tracking-widest">Powered by AI</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-tight">Your Personal <span class="text-gold-gradient">AI Stylist</span></h2>
+        <p class="text-navy-300 mt-4 max-w-xl mx-auto text-sm">Get personalized color suggestions, body shape guidance, and measurement help — all through a simple conversation.</p>
+      </div>
+
+      <div class="reveal glass rounded-2xl overflow-hidden">
+        <!-- Chat Header -->
+        <div class="flex items-center gap-3 px-6 py-4 border-b border-white/5">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-peach-300 flex items-center justify-center"><i data-lucide="bot" class="w-4 h-4 text-navy-800"></i></div>
+          <div><p class="text-sm font-medium text-white">Krishitha AI Stylist</p><p class="text-[10px] text-green-400 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-400 rounded-full inline-block"></span> Online</p></div>
+        </div>
+        <!-- Chat Body -->
+        <div id="chat-body" class="h-[400px] overflow-y-auto p-6 space-y-4 scroll-smooth" style="scrollbar-width:thin;">
+          <div class="flex gap-3">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-gold-400 to-peach-300 flex-shrink-0 flex items-center justify-center mt-1"><i data-lucide="bot" class="w-3 h-3 text-navy-800"></i></div>
+            <div class="chat-bubble-ai rounded-2xl rounded-tl-md px-4 py-3 max-w-md">
+              <p class="text-sm text-navy-100">Welcome to Krishitha Creations! 🌸 I'm your AI stylist. I can help you with:</p>
+              <ul class="text-sm text-navy-200 mt-2 space-y-1">
+                <li>🎨 Color suggestions based on your skin tone</li>
+                <li>📐 Body shape identification & style tips</li>
+                <li>📏 Measurement guidance</li>
+              </ul>
+              <p class="text-sm text-navy-100 mt-2">To start, what's your skin tone?</p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <button onclick="aiSelect('skin','Fair')" class="text-xs px-3 py-1.5 rounded-full bg-peach-200/20 text-peach-200 hover:bg-peach-200/30 transition-colors">🤍 Fair</button>
+                <button onclick="aiSelect('skin','Medium')" class="text-xs px-3 py-1.5 rounded-full bg-gold-100/20 text-gold-200 hover:bg-gold-100/30 transition-colors">🤎 Medium</button>
+                <button onclick="aiSelect('skin','Olive')" class="text-xs px-3 py-1.5 rounded-full bg-green-200/20 text-green-200 hover:bg-green-200/30 transition-colors">💚 Olive</button>
+                <button onclick="aiSelect('skin','Dark')" class="text-xs px-3 py-1.5 rounded-full bg-purple-200/20 text-purple-200 hover:bg-purple-200/30 transition-colors">💜 Dark</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Chat Input -->
+        <div class="px-6 py-4 border-t border-white/5 flex gap-3">
+          <input id="chat-input" type="text" placeholder="Type your question..." class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-400" onkeypress="if(event.key==='Enter')sendChat()">
+          <button onclick="sendChat()" class="btn-gold px-4 py-2.5 rounded-lg"><i data-lucide="send" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SIZE CHARTS ====== -->
+  <section id="size-charts" class="py-24 relative" style="background:linear-gradient(180deg,rgba(10,22,40,0),rgba(15,26,48,0.4),rgba(10,22,40,0));">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Reference Guide</span>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold mt-3 tracking-tight">Size <span class="text-peach-gradient">Charts</span></h2>
+        <p class="text-navy-300 mt-4 max-w-xl mx-auto text-sm">Use these charts as a reference. For custom tailoring, we always take your exact measurements.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Generic Size Chart -->
+        <div class="reveal glass-light rounded-2xl overflow-hidden">
+          <div class="px-6 py-4 border-b border-white/5 flex items-center gap-3">
+            <i data-lucide="ruler" class="w-5 h-5 text-gold-400"></i>
+            <h3 class="font-display text-lg text-white">Standard Size Chart (S / M / L / XL)</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead><tr class="border-b border-white/5">
+                <th class="text-left px-6 py-3 text-xs text-gold-400 uppercase tracking-wider font-medium">Size</th>
+                <th class="text-center px-4 py-3 text-xs text-gold-400 uppercase tracking-wider font-medium">Bust</th>
+                <th class="text-center px-4 py-3 text-xs text-gold-400 uppercase tracking-wider font-medium">Waist</th>
+                <th class="text-center px-4 py-3 text-xs text-gold-400 uppercase tracking-wider font-medium">Hips</th>
+                <th class="text-center px-4 py-3 text-xs text-gold-400 uppercase tracking-wider font-medium">Shoulder</th>
+              </tr></thead>
+              <tbody class="text-navy-200">
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">S</td><td class="text-center px-4 py-3">32"</td><td class="text-center px-4 py-3">26"</td><td class="text-center px-4 py-3">34"</td><td class="text-center px-4 py-3">14"</td></tr>
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">M</td><td class="text-center px-4 py-3">34"</td><td class="text-center px-4 py-3">28"</td><td class="text-center px-4 py-3">36"</td><td class="text-center px-4 py-3">14.5"</td></tr>
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">L</td><td class="text-center px-4 py-3">36"</td><td class="text-center px-4 py-3">30"</td><td class="text-center px-4 py-3">38"</td><td class="text-center px-4 py-3">15"</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">XL</td><td class="text-center px-4 py-3">38"</td><td class="text-center px-4 py-3">32"</td><td class="text-center px-4 py-3">40"</td><td class="text-center px-4 py-3">15.5"</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Custom Tailoring Chart -->
+        <div class="reveal glass-light rounded-2xl overflow-hidden" style="transition-delay:.1s">
+          <div class="px-6 py-4 border-b border-white/5 flex items-center gap-3">
+            <i data-lucide="scissors" class="w-5 h-5 text-peach-300"></i>
+            <h3 class="font-display text-lg text-white">Custom Tailoring Measurements</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead><tr class="border-b border-white/5">
+                <th class="text-left px-6 py-3 text-xs text-peach-300 uppercase tracking-wider font-medium">Garment</th>
+                <th class="text-center px-4 py-3 text-xs text-peach-300 uppercase tracking-wider font-medium">Key Measurement</th>
+                <th class="text-center px-4 py-3 text-xs text-peach-300 uppercase tracking-wider font-medium">Range</th>
+              </tr></thead>
+              <tbody class="text-navy-200">
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">Blouse</td><td class="text-center px-4 py-3">Bust, Shoulder, Sleeve, Length</td><td class="text-center px-4 py-3">28" – 44"</td></tr>
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">Lehenga</td><td class="text-center px-4 py-3">Waist, Hip, Length</td><td class="text-center px-4 py-3">24" – 42"</td></tr>
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">Kurti</td><td class="text-center px-4 py-3">Bust, Waist, Length, Shoulder</td><td class="text-center px-4 py-3">38" – 46" length</td></tr>
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">Gown</td><td class="text-center px-4 py-3">Bust, Waist, Hip, Full Length</td><td class="text-center px-4 py-3">50" – 62" length</td></tr>
+                <tr class="hover:bg-white/[0.02]"><td class="px-6 py-3 font-medium text-white">Hand Size</td><td class="text-center px-4 py-3">Arm circumference, Wrist</td><td class="text-center px-4 py-3">8" – 14"</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ORDER FORM ====== -->
+  <section id="order" class="py-24 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-peach-300/5 rounded-full blur-[120px]"></div>
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Place Your Order</span>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold mt-3 tracking-tight">Custom <span class="text-gold-gradient">Order Form</span></h2>
+        <p class="text-navy-300 mt-4 max-w-xl mx-auto text-sm">Fill in your details and measurements. Our designer will confirm via WhatsApp before stitching begins.</p>
+      </div>
+
+      <form id="order-form" class="reveal glass rounded-2xl p-8 md:p-10 space-y-8" onsubmit="submitOrder(event)">
+        <!-- Personal Info -->
+        <div>
+          <h3 class="text-sm font-medium text-gold-400 uppercase tracking-wider mb-4 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4"></i> Personal Information</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="text-xs text-navy-300 mb-1 block">Full Name *</label><input type="text" required placeholder="Your name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Phone / WhatsApp *</label><input type="tel" required placeholder="+91 98765 43210" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Email</label><input type="email" placeholder="you@example.com" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">City / Location *</label><input type="text" required placeholder="Chennai, Mumbai..." class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+          </div>
+        </div>
+
+        <!-- Order Details -->
+        <div>
+          <h3 class="text-sm font-medium text-gold-400 uppercase tracking-wider mb-4 flex items-center gap-2"><i data-lucide="shirt" class="w-4 h-4"></i> Order Details</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="text-xs text-navy-300 mb-1 block">Category *</label>
+              <select required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white appearance-none cursor-pointer">
+                <option value="" class="bg-navy-700">Select category</option>
+                <option value="saree-blouse" class="bg-navy-700">Saree Blouse</option>
+                <option value="lehenga" class="bg-navy-700">Lehenga</option>
+                <option value="kurti" class="bg-navy-700">Kurti</option>
+                <option value="gown" class="bg-navy-700">Gown</option>
+                <option value="casual" class="bg-navy-700">Casual Wear</option>
+                <option value="kids" class="bg-navy-700">Children's Wear</option>
+              </select>
+            </div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Fabric Type</label>
+              <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white appearance-none cursor-pointer">
+                <option value="" class="bg-navy-700">Select fabric</option>
+                <option value="silk" class="bg-navy-700">Silk</option>
+                <option value="cotton" class="bg-navy-700">Cotton</option>
+                <option value="georgette" class="bg-navy-700">Georgette</option>
+                <option value="chiffon" class="bg-navy-700">Chiffon</option>
+                <option value="satin" class="bg-navy-700">Satin</option>
+                <option value="velvet" class="bg-navy-700">Velvet</option>
+                <option value="other" class="bg-navy-700">Other</option>
+              </select>
+            </div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Preferred Color</label><input type="text" placeholder="e.g., Royal Blue, Peach" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Body Shape</label>
+              <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white appearance-none cursor-pointer">
+                <option value="" class="bg-navy-700">Select body shape</option>
+                <option value="hourglass" class="bg-navy-700">Hourglass</option>
+                <option value="pear" class="bg-navy-700">Pear / Triangle</option>
+                <option value="apple" class="bg-navy-700">Apple / Round</option>
+                <option value="rectangle" class="bg-navy-700">Rectangle</option>
+                <option value="inverted-triangle" class="bg-navy-700">Inverted Triangle</option>
+                <option value="not-sure" class="bg-navy-700">Not sure (we'll help!)</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-4"><label class="text-xs text-navy-300 mb-1 block">Design Reference / Special Instructions</label><textarea rows="3" placeholder="Describe your dream outfit, share reference links, or any special requests..." class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500 resize-none"></textarea></div>
+        </div>
+
+        <!-- Measurements -->
+        <div>
+          <h3 class="text-sm font-medium text-peach-300 uppercase tracking-wider mb-4 flex items-center gap-2"><i data-lucide="ruler" class="w-4 h-4"></i> Measurements (in inches)</h3>
+          <p class="text-xs text-navy-400 mb-4">Leave blank if unsure — our designer will guide you on WhatsApp.</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div><label class="text-xs text-navy-300 mb-1 block">Bust</label><input type="number" step="0.5" placeholder="34" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Waist</label><input type="number" step="0.5" placeholder="28" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Hips</label><input type="number" step="0.5" placeholder="36" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Shoulder</label><input type="number" step="0.5" placeholder="14" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Sleeve Length</label><input type="number" step="0.5" placeholder="6" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Arm / Hand</label><input type="number" step="0.5" placeholder="10" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Garment Length</label><input type="number" step="0.5" placeholder="40" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+            <div><label class="text-xs text-navy-300 mb-1 block">Wrist</label><input type="number" step="0.5" placeholder="6" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500"></div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <button type="submit" class="btn-gold flex-1 inline-flex items-center justify-center gap-2 text-sm px-8 py-3.5 rounded-lg">
+            <i data-lucide="send" class="w-4 h-4"></i> Submit Order Request
+          </button>
+          <a href="https://wa.me/919032130064?text=Hi!%20I%20want%20to%20place%20a%20custom%20order." target="_blank" class="btn-peach inline-flex items-center justify-center gap-2 text-sm px-8 py-3.5 rounded-lg">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> Or Chat on WhatsApp
+          </a>
+        </div>
+      </form>
+
+      <!-- Success Toast (hidden) -->
+      <div id="order-toast" class="hidden fixed bottom-6 right-6 z-50 glass rounded-xl p-5 flex items-start gap-3 max-w-sm" style="box-shadow:0 20px 60px -15px rgba(0,0,0,0.6);">
+        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i></div>
+        <div><p class="text-sm font-medium text-white">Order Submitted!</p><p class="text-xs text-navy-300 mt-1">Our designer will contact you on WhatsApp shortly to confirm details.</p></div>
+        <button onclick="document.getElementById('order-toast').classList.add('hidden')" class="text-navy-400 hover:text-white ml-2"><i data-lucide="x" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== REVIEWS ====== -->
+  <section id="reviews" class="py-24 relative" style="background:linear-gradient(180deg,rgba(10,22,40,0),rgba(15,26,48,0.4),rgba(10,22,40,0));">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Testimonials</span>
+        <h2 class="font-display text-3xl md:text-5xl font-semibold mt-3 tracking-tight">What Our <span class="text-peach-gradient">Clients Say</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="reveal card-hover glass-light rounded-2xl p-6">
+          <div class="flex gap-1 mb-4"><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span></div>
+          <p class="text-sm text-navy-200 leading-relaxed mb-5">"The blouse fit me like a glove! I was amazed at how perfectly it matched the reference I gave. Krishitha Creations truly understands elegance."</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-peach-300 to-gold-400 flex items-center justify-center text-navy-800 font-bold text-sm">P</div>
+            <div><p class="text-sm font-medium text-white">Priya Ramachandran</p><p class="text-[11px] text-navy-400">Chennai • Saree Blouse</p></div>
+          </div>
+        </div>
+        <div class="reveal card-hover glass-light rounded-2xl p-6" style="transition-delay:.1s">
+          <div class="flex gap-1 mb-4"><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span></div>
+          <p class="text-sm text-navy-200 leading-relaxed mb-5">"Ordered a lehenga for my daughter's birthday — the AI stylist suggested the perfect peach-gold combo. She looked like a princess! Will order again for sure."</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-peach-300 flex items-center justify-center text-navy-800 font-bold text-sm">A</div>
+            <div><p class="text-sm font-medium text-white">Anjali Sharma</p><p class="text-[11px] text-navy-400">Mumbai • Kids Lehenga</p></div>
+          </div>
+        </div>
+        <div class="reveal card-hover glass-light rounded-2xl p-6" style="transition-delay:.2s">
+          <div class="flex gap-1 mb-4"><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-gold-400">★</span><span class="text-navy-600">★</span></div>
+          <p class="text-sm text-navy-200 leading-relaxed mb-5">"Super fast delivery and the kurti stitching quality is top-notch. The WhatsApp communication made everything so easy. Highly recommend!"</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-peach-400 to-gold-300 flex items-center justify-center text-navy-800 font-bold text-sm">D</div>
+            <div><p class="text-sm font-medium text-white">Deepa Venkatesh</p><p class="text-[11px] text-navy-400">Bangalore • Kurti</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Write Review -->
+      <div class="reveal mt-12 glass-light rounded-2xl p-6 md:p-8 max-w-2xl mx-auto">
+        <h3 class="font-display text-lg text-white mb-4 text-center">Write a Review</h3>
+        <form onsubmit="submitReview(event)" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" required placeholder="Your Name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500">
+            <input type="text" placeholder="City" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500">
+          </div>
+          <div>
+            <label class="text-xs text-navy-300 mb-2 block">Rating</label>
+            <div id="star-rating" class="flex gap-1">
+              <button type="button" onclick="setRating(1)" class="text-2xl text-navy-600 hover:text-gold-400 transition-colors star-btn">★</button>
+              <button type="button" onclick="setRating(2)" class="text-2xl text-navy-600 hover:text-gold-400 transition-colors star-btn">★</button>
+              <button type="button" onclick="setRating(3)" class="text-2xl text-navy-600 hover:text-gold-400 transition-colors star-btn">★</button>
+              <button type="button" onclick="setRating(4)" class="text-2xl text-navy-600 hover:text-gold-400 transition-colors star-btn">★</button>
+              <button type="button" onclick="setRating(5)" class="text-2xl text-navy-600 hover:text-gold-400 transition-colors star-btn">★</button>
+            </div>
+          </div>
+          <textarea required rows="3" placeholder="Share your experience..." class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-navy-500 resize-none"></textarea>
+          <button type="submit" class="btn-gold text-sm px-6 py-2.5 rounded-lg">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT + POLICIES ====== -->
+  <section id="about" class="py-24 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-peach-300/30 to-transparent"></div>
+    <div class="max-w-5xl mx-auto px-6">
+      <!-- About -->
+      <div class="reveal grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Our Story</span>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 tracking-tight mb-6">About <span class="text-gold-gradient">Krishitha Creations</span></h2>
+          <p class="text-sm text-navy-200 leading-relaxed mb-4">Krishitha Creations was born from a passion for making every woman feel beautiful in clothes that fit perfectly. What started as a small tailoring service has grown into a trusted brand known for precision, creativity, and personalized care.</p>
+          <p class="text-sm text-navy-200 leading-relaxed mb-4">We combine traditional Indian craftsmanship with modern design sensibility — and now, AI-powered styling assistance — to deliver outfits that make you feel confident and radiant.</p>
+          <p class="text-sm text-navy-200 leading-relaxed">Follow us on <a href="https://instagram.com/_krishitha_creation" target="_blank" class="text-peach-300 hover:text-peach-200 underline underline-offset-2">Instagram @_krishitha_creation</a> for daily inspiration and behind-the-scenes content.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-gold-400/10 to-peach-300/10 rounded-3xl blur-2xl"></div>
+          <img src="https://picsum.photos/seed/krishitha-about-studio/600/500.jpg" alt="Our studio" class="relative glass rounded-2xl w-full h-80 object-cover">
+        </div>
+      </div>
+
+      <!-- Policies -->
+      <div class="reveal">
+        <div class="text-center mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-medium">Transparency First</span>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 tracking-tight">Our <span class="text-peach-gradient">Policies</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Privacy -->
+          <div class="card-hover glass-light rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-gold-400/10 flex items-center justify-center mb-4"><i data-lucide="shield" class="w-5 h-5 text-gold-400"></i></div>
+            <h3 class="font-display text-lg text-white mb-3">Privacy Policy</h3>
+            <ul class="text-xs text-navy-300 space-y-2 leading-relaxed">
+              <li>• Your name, phone, and measurements are used <strong class="text-navy-200">only</strong> to fulfill your order.</li>
+              <li>• We never share your personal data with third parties for marketing.</li>
+              <li>• Photos you share for reference are deleted after order completion.</li>
+              <li>• You can request data deletion anytime by messaging us on WhatsApp.</li>
+              <li>• This site uses no tracking cookies. Your privacy is respected.</li>
+            </ul>
+          </div>
+          <!-- Terms -->
+          <div class="card-hover glass-light rounded-2xl p-6" style="transition-delay:.1s">
+            <div class="w-10 h-10 rounded-lg bg-peach-300/10 flex items-center justify-center mb-4"><i data-lucide="file-text" class="w-5 h-5 text-peach-300"></i></div>
+            <h3 class="font-display text-lg text-white mb-3">Terms & Conditions</h3>
+            <ul class="text-xs text-navy-300 space-y-2 leading-relaxed">
+              <li>• Orders are confirmed only after discussion on WhatsApp/Instagram DM.</li>
+              <li>• 50% advance payment is required before stitching begins.</li>
+              <li>• Delivery timelines are estimates and may vary by ±3 days.</li>
+              <li>• Fabric quality depends on availability; alternatives will be discussed.</li>
+              <li>• AI suggestions are recommendations only — final choice is always yours.</li>
+            </ul>
+          </div>
+          <!-- Returns -->
+          <div class="card-hover glass-light rounded-2xl p-6" style="transition-delay:.2s">
+            <div class="w-10 h-10 rounded-lg bg-green-400/10 flex items-center justify-center mb-4"><i data-lucide="refresh-cw" class="w-5 h-5 text-green-400"></i></div>
+            <h3 class="font-display text-lg text-white mb-3">Return & Alteration Policy</h3>
+            <ul class="text-xs text-navy-300 space-y-2 leading-relaxed">
+              <li>• Since each piece is custom-tailored, <strong class="text-navy-200">returns are not accepted</strong>.</li>
+              <li>• Free alteration is provided within <strong class="text-navy-200">7 days</strong> of delivery if the fit isn't perfect.</li>
+              <li>• Alteration requests must be sent with photos via WhatsApp.</li>
+              <li>• Shipping charges for re-delivery after alteration are borne by the customer.</li>
+              <li>• Damages caused by improper washing are not covered.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://picsum.photos/seed/krishitha-cta-fabric/1920/600.jpg" alt="" class="w-full h-full object-cover opacity-15">
+      <div class="absolute inset-0 bg-gradient-to-r from-navy-800 via-navy-800/95 to-navy-800/90"></div>
+    </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-400/10 rounded-full blur-[150px]"></div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-6">Ready to Create Your <span class="text-gold-gradient">Dream Outfit?</span></h2>
+      <p class="text-navy-300 mb-10 max-w-xl mx-auto text-sm">Whether it's a bridal lehenga, a simple kurti, or your child's festive wear — we're just one message away.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919032130064?text=Hi%20Krishitha%20Creations!%20I%20want%20to%20discuss%20a%20design." target="_blank" class="btn-gold inline-flex items-center gap-2 text-sm px-8 py-3.5 rounded-lg">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us Now
+        </a>
+        <a href="https://www.instagram.com/_krishitha_creation/dm/" target="_blank" class="btn-peach inline-flex items-center gap-2 text-sm px-8 py-3.5 rounded-lg">
+          <i data-lucide="instagram" class="w-4 h-4"></i> Follow on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="border-t border-white/5 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-800 font-bold font-display">K</div>
+            <div><span class="text-sm font-display font-semibold text-gold-300">Krishitha</span><span class="block text-[9px] uppercase tracking-[0.2em] text-peach-300/60 -mt-0.5">Creations</span></div>
+          </div>
+          <p class="text-xs text-navy-400 leading-relaxed">Tailored elegance, made for you. Custom stitching with love and precision.</p>
+          <div class="flex gap-3 mt-5">
+            <a href="https://www.instagram.com/_krishitha_creation/dm/" target="_blank" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-gold-400/20 flex items-center justify-center text-navy-400 hover:text-gold-400 transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="https://wa.me/919032130064" target="_blank" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-green-400/20 flex items-center justify-center text-navy-400 hover:text-green-400 transition-all"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+            <a href="https://youtube.com/@krishitha_creations" target="_blank" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-red-400/20 flex items-center justify-center text-navy-400 hover:text-red-400 transition-all"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-widest text-gold-400 font-medium mb-4">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#home" class="text-sm text-navy-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#categories" class="text-sm text-navy-400 hover:text-white transition-colors">Categories</a></li>
+            <li><a href="#portfolio" class="text-sm text-navy-400 hover:text-white transition-colors">Portfolio</a></li>
+            <li><a href="#order" class="text-sm text-navy-400 hover:text-white transition-colors">Place Order</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-widest text-gold-400 font-medium mb-4">Support</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#ai-assistant" class="text-sm text-navy-400 hover:text-white transition-colors">AI Stylist</a></li>
+            <li><a href="#size-charts" class="text-sm text-navy-400 hover:text-white transition-colors">Size Charts</a></li>
+            <li><a href="#reviews" class="text-sm text-navy-400 hover:text-white transition-colors">Reviews</a></li>
+            <li><a href="#about" class="text-sm text-navy-400 hover:text-white transition-colors">About & Policies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase tracking-widest text-gold-400 font-medium mb-4">Contact</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2 text-sm text-navy-400"><i data-lucide="phone" class="w-3.5 h-3.5 text-peach-300"></i> +91 90321 30064</li>
+            <li class="flex items-center gap-2 text-sm text-navy-400"><i data-lucide="mail" class="w-3.5 h-3.5 text-peach-300"></i> hello@krishithacreations.com</li>
+            <li class="flex items-start gap-2 text-sm text-navy-400"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-peach-300 mt-0.5"></i> Chennai, Tamil Nadu, India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-navy-500">© 2025 Krishitha Creations. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#about" class="text-xs text-navy-500 hover:text-navy-300 transition-colors">Privacy Policy</a>
+          <a href="#about" class="text-xs text-navy-500 hover:text-navy-300 transition-colors">Terms & Conditions</a>
+          <a href="#about" class="text-xs text-navy-500 hover:text-navy-300 transition-colors">Return Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  <!-- ====== FLOATING SOCIAL BUTTONS ====== -->
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919032130064?text=Hi%20Krishitha%20Creations!" target="_blank" class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110" style="box-shadow:0 4px 20px rgba(37,211,102,0.45);animation:whatsapp-pulse 2s infinite;" title="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <!-- Instagram Button -->
+  <a href="https://www.instagram.com/_krishitha_creation/dm/" target="_blank" class="fixed bottom-6 left-[5.5rem] z-50 w-14 h-14 bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#bc1888] hover:from-[#f5a623] hover:via-[#e8764a] hover:to-[#d02a90] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110" style="box-shadow:0 4px 20px rgba(225,48,108,0.35);" title="DM us on Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+  </a>
+
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ---- Mobile Menu ----
+    const mobToggle = document.getElementById('mob-toggle');
+    const mobMenu = document.getElementById('mob-menu');
+    mobToggle.addEventListener('click', () => {
+      mobMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mob-link').forEach(link => {
+      link.addEventListener('click', () => mobMenu.classList.add('hidden'));
+    });
+
+    // ---- Scroll Reveal ----
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => observer.observe(el));
+
+    // ---- Navbar scroll effect ----
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.borderBottomColor = 'rgba(201,169,110,0.1)';
+        nav.style.background = 'rgba(10,22,40,0.95)';
+      } else {
+        nav.style.borderBottomColor = 'rgba(255,255,255,0.05)';
+        nav.style.background = 'rgba(10,22,40,0.85)';
+      }
+    });
+
+    // ---- Portfolio Gallery ----
+    const galleryData = {
+      tailored: [
+        { seed: 'kc-tailored-1', title: 'Silk Blouse', cat: 'Saree Blouse' },
+        { seed: 'kc-tailored-2', title: 'Bridal Lehenga', cat: 'Lehenga' },
+        { seed: 'kc-tailored-3', title: 'Anarkali Kurti', cat: 'Kurti' },
+        { seed: 'kc-tailored-4', title: 'Evening Gown', cat: 'Gown' },
+        { seed: 'kc-tailored-5', title: 'Princess Cut Blouse', cat: 'Saree Blouse' },
+        { seed: 'kc-tailored-6', title: 'A-Line Kurti', cat: 'Kurti' },
+        { seed: 'kc-tailored-7', title: 'Festive Lehenga', cat: 'Lehenga' },
+        { seed: 'kc-tailored-8', title: 'Cocktail Gown', cat: 'Gown' },
+      ],
+      fabricated: [
+        { seed: 'kc-fab-1', title: 'Georgette Saree Set', cat: 'Fabricated' },
+        { seed: 'kc-fab-2', title: 'Satin Lehenga Set', cat: 'Fabricated' },
+        { seed: 'kc-fab-3', title: 'Chiffon Gown', cat: 'Fabricated' },
+        { seed: 'kc-fab-4', title: 'Velvet Blouse + Saree', cat: 'Fabricated' },
+        { seed: 'kc-fab-5', title: 'Raw Silk Kurti Set', cat: 'Fabricated' },
+        { seed: 'kc-fab-6', title: 'Net Lehenga Dupatta', cat: 'Fabricated' },
+      ],
+      reels: [
+        { seed: 'kc-reel-1', title: 'Stitching Process', cat: 'Reel', isVideo: true },
+        { seed: 'kc-reel-2', title: 'Unboxing Video', cat: 'Reel', isVideo: true },
+        { seed: 'kc-reel-3', title: 'Behind The Scenes', cat: 'Reel', isVideo: true },
+        { seed: 'kc-reel-4', title: 'Before & After Fit', cat: 'Reel', isVideo: true },
+        { seed: 'kc-reel-5', title: 'Embroidery Detail', cat: 'Reel', isVideo: true },
+        { seed: 'kc-reel-6', title: 'Design Walkthrough', cat: 'Reel', isVideo: true },
+      ],
+      ai: [
+        { seed: 'kc-ai-1', title: 'AI Model — Saree Look', cat: 'AI Preview' },
+        { seed: 'kc-ai-2', title: 'AI Model — Lehenga Look', cat: 'AI Preview' },
+        { seed: 'kc-ai-3', title: 'AI Model — Gown Look', cat: 'AI Preview' },
+        { seed: 'kc-ai-4', title: 'AI Model — Kurti Look', cat: 'AI Preview' },
+        { seed: 'kc-ai-5', title: 'AI Color Simulation', cat: 'AI Preview' },
+        { seed: 'kc-ai-6', title: 'AI Style Comparison', cat: 'AI Preview' },
+      ]
+    };
+
+    function switchGalleryTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => { b.className = b.className.replace('tab-active','tab-inactive'); });
+      document.getElementById('tab-' + tab).className = document.getElementById('tab-' + tab).className.replace('tab-inactive','tab-active');
+
+      const grid = document.getElementById('gallery-grid');
+      grid.innerHTML = '';
+      galleryData[tab].forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item glass-light rounded-xl overflow-hidden cursor-pointer group';
+        div.style.opacity = '0';
+        div.style.transform = 'translateY(16px)';
+        div.style.transition = `all 0.4s ease ${i * 0.05}s`;
+        div.innerHTML = `
+          <div class="relative">
+            <img src="https://picsum.photos/seed/${item.seed}/400/500.jpg" alt="${item.title}" class="w-full h-48 object-cover">
+            ${item.isVideo ? '<div class="absolute inset-0 flex items-center justify-center bg-black/30"><div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur flex items-center justify-center"><svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg></div></div>' : ''}
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-800/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <p class="text-xs font-medium text-white">${item.title}</p>
+              <p class="text-[10px] text-gold-300">${item.cat}</p>
+            </div>
+          </div>
+        `;
+        grid.appendChild(div);
+        requestAnimationFrame(() => {
+          div.style.opacity = '1';
+          div.style.transform = 'translateY(0)';
+        });
+      });
+    }
+    // Init gallery
+    switchGalleryTab('tailored');
+
+    // ---- AI Assistant ----
+    let aiStep = 'skin';
+    let selectedSkin = '';
+    let selectedShape = '';
+
+    const aiResponses = {
+      skin: {
+        'Fair': "Great choice! For **fair skin tones**, you look stunning in:\n\n💎 **Best Colors:** Royal Blue, Emerald Green, Deep Red, Wine, Plum\n🌸 **Soft Options:** Peach, Baby Pink, Lavender, Mint\n⚠️ **Avoid:** Very light pastels that wash out\n\nWould you like me to help identify your body shape next?",
+        'Medium': "Lovely! For **medium/warm skin tones**, these colors are perfect:\n\n💎 **Best Colors:** Mustard Yellow, Coral, Teal, Maroon, Forest Green\n🌸 **Soft Options:** Dusty Rose, Olive, Beige, Mauve\n⚠️ **Avoid:** Neon shades that clash\n\nShall we figure out your body shape?",
+        'Olive': "Beautiful! For **olive skin tones**, try these:\n\n💎 **Best Colors:** Rich Burgundy, Navy Blue, Emerald, Copper, Terracotta\n🌸 **Soft Options:** Sage Green, Dusty Pink, Cream, Taupe\n⚠️ **Avoid:** Bright oranges, lime greens\n\nWant help with body shape next?",
+        'Dark': "Gorgeous! For **deep/dark skin tones**, you shine in:\n\n💎 **Best Colors:** Gold, Mustard, Fuchsia, Cobalt Blue, Bright Orange\n🌸 **Soft Options:** Ivory, Powder Blue, Blush Pink, Lavender\n⚠️ **Avoid:** Very dark browns/blacks (unless for contrast)\n\nLet's find your body shape?"
+      }
+    };
+
+    const bodyShapes = [
+      { name: 'Hourglass', desc: 'Balanced bust & hips, defined waist', tip: 'A-line lehengas, wrap blouses, fitted kurtis — you can pull off anything!' },
+      { name: 'Pear', desc: 'Hips wider than bust', tip: 'Embellished blouses, A-line cuts, boat necks — draw attention upward!' },
+      { name: 'Apple', desc: 'Broader waist/bust', tip: 'Empire waist gowns, V-necks, flowing fabrics — elongate your silhouette!' },
+      { name: 'Rectangle', desc: 'Similar bust, waist, hips', tip: 'Peplum blouses, layered lehengas, belted kurtis — create curves!' },
+      { name: 'Inverted Triangle', desc: 'Broader shoulders', tip: 'Scoop necks, flared lehengas, straight-cut kurtis — balance proportions!' }
+    ];
+
+    function aiSelect(type, value) {
+      if (type === 'skin') {
+        selectedSkin = value;
+        addChatBubble('user', value);
+        const resp = aiResponses.skin[value].replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>').replace(/\n/g, '<br>');
+        setTimeout(() => {
+          addChatBubble('ai', resp);
+          setTimeout(() => {
+            addChatBubble('ai', 'Which body shape best describes you?');
+            const btns = bodyShapes.map(s => `<button onclick="aiSelect('shape','${s.name}')" class="text-xs px-3 py-1.5 rounded-full bg-peach-200/20 text-peach-200 hover:bg-peach-200/30 transition-colors">${s.name}</button>`).join('');
+            addChatButtons(btns);
+          }, 800);
+        }, 600);
+      } else if (type === 'shape') {
+        selectedShape = value;
+        addChatBubble('user', value);
+        const shape = bodyShapes.find(s => s.name === value);
+        setTimeout(() => {
+          addChatBubble('ai', `<strong class="text-white">${shape.name} Body Shape</strong><br><span class="text-navy-300">${shape.desc}</span><br><br>✨ <strong class="text-gold-300">Style Tip:</strong> ${shape.tip}`);
+          setTimeout(() => {
+            addChatBubble('ai', 'Now for the most important part — your key measurements! Please share:<br><br>📏 <strong class="text-white">Bust</strong> (inches)<br>📏 <strong class="text-white">Waist</strong> (inches)<br>📏 <strong class="text-white">Hand/Arm size</strong> (inches)<br><br>You can type them like: "Bust 34, Waist 28, Hand 10"');
+          }, 800);
+        }, 600);
+      }
+    }
+
+    function addChatBubble(sender, html) {
+      const chatBody = document.getElementById('chat-body');
+      const wrapper = document.createElement('div');
+      wrapper.className = sender === 'user' ? 'flex justify-end' : 'flex gap-3';
+      if (sender === 'user') {
+        wrapper.innerHTML = `<div class="chat-bubble-user rounded-2xl rounded-tr-md px-4 py-3 max-w-md"><p class="text-sm">${html}</p></div>`;
+      } else {
+        wrapper.innerHTML = `<div class="w-7 h-7 rounded-full bg-gradient-to-br from-gold-400 to-peach-300 flex-shrink-0 flex items-center justify-center mt-1"><svg class="w-3 h-3 text-navy-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></div><div class="chat-bubble-ai rounded-2xl rounded-tl-md px-4 py-3 max-w-md"><p class="text-sm text-navy-100 leading-relaxed">${html}</p></div>`;
+      }
+      chatBody.appendChild(wrapper);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function addChatButtons(html) {
+      const chatBody = document.getElementById('chat-body');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flex gap-3';
+      wrapper.innerHTML = `<div class="w-7 flex-shrink-0"></div><div class="flex flex-wrap gap-2">${html}</div>`;
+      chatBody.appendChild(wrapper);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function sendChat() {
+      const input = document.getElementById('chat-input');
+      const msg = input.value.trim();
+      if (!msg) return;
+      addChatBubble('user', msg);
+      input.value = '';
+
+      setTimeout(() => {
+        // Simple keyword-based responses
+        const lower = msg.toLowerCase();
+        let response = "I'd love to help! Could you tell me your skin tone first? (Fair / Medium / Olive / Dark) so I can suggest the best colors for you. 🎨";
+        if (lower.includes('bust') || lower.includes('waist') || lower.includes('hand') || lower.includes('measurement') || lower.includes('inch')) {
+          response = "Thanks for sharing your measurements! 📏 Based on what you've told me, I recommend:<br><br>• For the bust: Add 2" ease for comfort<br>• For the waist: Keep it fitted with a drawstring option<br>• For hands/arm: Sleeve should be 1" above your wrist for elegance<br><br>✅ You can now fill the <a href='#order' class='text-gold-400 underline'>Order Form</a> with these details, or <a href='https://wa.me/919032130064' target='_blank' class='text-peach-300 underline'>message our designer</a> for final confirmation!";
+        } else if (lower.includes('color') || lower.includes('colour') || lower.includes('suggest')) {
+          response = "For color suggestions, I need to know your skin tone first! Click one of the options above: 🤍 Fair, 🤎 Medium, 💚 Olive, or 💜 Dark.";
+        } else if (lower.includes('price') || lower.includes('cost') || lower.includes('rate')) {
+          response = "Pricing depends on the garment type, fabric, and work complexity. Please <a href='https://wa.me/919032130064?text=Hi!%20I%20want%20to%20know%20the%20price%20for...' target='_blank' class='text-peach-300 underline'>message us on WhatsApp</a> with your requirements for an exact quote! 💰";
+        } else if (lower.includes('delivery') || lower.includes('time') || lower.includes('how long')) {
+          response = "⏱️ Typical delivery times:<br>• Simple blouse: 5–7 days<br>• Kurti: 7–10 days<br>• Lehenga: 12–15 days<br>• Bridal outfit: 20–25 days<br><br>Rush orders available on request!";
+        } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
+          response = "Hello! 😊 Welcome to Krishitha Creations. How can I help you today? I can assist with color suggestions, body shape styling, or measurement guidance!";
+        }
+        addChatBubble('ai', response);
+      }, 800);
+    }
+
+    // ---- Order Form Submit ----
+    function submitOrder(e) {
+      e.preventDefault();
+      const toast = document.getElementById('order-toast');
+      toast.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => toast.classList.add('hidden'), 6000);
+    }
+
+    // ---- Star Rating ----
+    let currentRating = 0;
+    function setRating(n) {
+      currentRating = n;
+      document.querySelectorAll('.star-btn').forEach((btn, i) => {
+        btn.style.color = i < n ? '#c9a96e' : '#334155';
+      });
+    }
+
+    // ---- Review Submit ----
+    function submitReview(e) {
+      e.preventDefault();
+      if (currentRating === 0) { alert('Please select a star rating!'); return; }
+      alert('Thank you for your review! 🌟 It will appear after approval.');
+      e.target.reset();
+      setRating(0);
+    }
+  
+
+
+  </script>
+
+  <!-- ====== GALAXY STARFIELD BACKGROUND ====== -->
+  <script>
+  (function() {
+    const canvas = document.getElementById('galaxy-bg');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    let W, H;
+    const mouse = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 };
+    const STAR_COUNT = 500;
+    let stars = [];
+    let shootingStars = [];
+    let nebulaCanvas = null;
+
+    function createStar() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        baseSize: Math.random() * 1.8 + 0.2,
+        size: 0,
+        twinkleSpeed: Math.random() * 0.03 + 0.005,
+        twinkleOffset: Math.random() * Math.PI * 2,
+        depth: Math.random(),
+        hue: Math.random() < 0.35 ? (30 + Math.random() * 25) :
+             Math.random() < 0.5 ? (200 + Math.random() * 40) :
+             (Math.random() * 360),
+        saturation: Math.random() * 0.5,
+      };
+    }
+
+    function createShootingStar() {
+      const angle = Math.random() * 0.6 + 0.3;
+      const speed = Math.random() * 8 + 5;
+      return {
+        x: Math.random() * W * 0.8,
+        y: Math.random() * H * 0.3,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 1.0,
+        decay: Math.random() * 0.015 + 0.008,
+        length: Math.random() * 60 + 30,
+        size: Math.random() * 1.5 + 0.5,
+      };
+    }
+
+    function createNebula() {
+      nebulaCanvas = document.createElement('canvas');
+      nebulaCanvas.width = Math.floor(W * 0.5);
+      nebulaCanvas.height = Math.floor(H * 0.5);
+      const nctx = nebulaCanvas.getContext('2d');
+
+      var nebulae = [
+        { x: 0.25, y: 0.35, r: 0.4, color: 'rgba(201,169,110,0.035)' },
+        { x: 0.75, y: 0.25, r: 0.35, color: 'rgba(244,184,160,0.025)' },
+        { x: 0.5, y: 0.7, r: 0.5, color: 'rgba(100,80,160,0.025)' },
+        { x: 0.15, y: 0.8, r: 0.3, color: 'rgba(201,169,110,0.02)' },
+        { x: 0.85, y: 0.65, r: 0.4, color: 'rgba(160,120,180,0.02)' },
+      ];
+
+      nebulae.forEach(function(n) {
+        var grad = nctx.createRadialGradient(
+          n.x * nebulaCanvas.width, n.y * nebulaCanvas.height, 0,
+          n.x * nebulaCanvas.width, n.y * nebulaCanvas.height, n.r * Math.max(nebulaCanvas.width, nebulaCanvas.height)
+        );
+        grad.addColorStop(0, n.color);
+        grad.addColorStop(1, 'transparent');
+        nctx.fillStyle = grad;
+        nctx.fillRect(0, 0, nebulaCanvas.width, nebulaCanvas.height);
+      });
+    }
+
+    function resize() {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width = W + 'px';
+      canvas.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stars = [];
+      for (var i = 0; i < STAR_COUNT; i++) {
+        stars.push(createStar());
+      }
+      createNebula();
+    }
+
+    function onMouseMove(e) {
+      mouse.tx = e.clientX / W;
+      mouse.ty = e.clientY / H;
+    }
+
+    var frame = 0;
+
+    function tick() {
+      frame++;
+      ctx.clearRect(0, 0, W, H);
+
+      mouse.x += (mouse.tx - mouse.x) * 0.04;
+      mouse.y += (mouse.ty - mouse.y) * 0.04;
+
+      // Draw nebula
+      if (nebulaCanvas) {
+        ctx.globalAlpha = 1;
+        ctx.drawImage(nebulaCanvas, 0, 0, W, H);
+      }
+
+      // Draw stars
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i];
+        var time = frame * s.twinkleSpeed + s.twinkleOffset;
+        var twinkle = (Math.sin(time) * 0.5 + 0.5);
+        s.size = s.baseSize * (0.5 + twinkle * 0.5);
+        var alpha = 0.2 + twinkle * 0.8;
+
+        var parallaxX = (mouse.x - 0.5) * s.depth * 25;
+        var parallaxY = (mouse.y - 0.5) * s.depth * 25;
+        var drawX = s.x + parallaxX;
+        var drawY = s.y + parallaxY;
+
+        // Glow for brighter/larger stars
+        if (s.baseSize > 1.2) {
+          var glowSize = Math.max(0.1, s.size * 4);
+          var grad = ctx.createRadialGradient(drawX, drawY, 0, drawX, drawY, glowSize);
+          var hslColor = 'hsla(' + s.hue + ',' + (s.saturation * 100) + '%,80%,';
+          grad.addColorStop(0, hslColor + (alpha * 0.25) + ')');
+          grad.addColorStop(1, hslColor + '0)');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(drawX, drawY, glowSize, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Star dot
+        ctx.fillStyle = 'hsla(' + s.hue + ',' + (s.saturation * 100) + '%,90%,' + alpha + ')';
+        ctx.beginPath();
+        ctx.arc(drawX, drawY, Math.max(0.1, s.size), 0, Math.PI * 2);
+        ctx.fill();
+
+        // Cross flare for very bright stars
+        if (s.baseSize > 1.5 && twinkle > 0.75) {
+          ctx.strokeStyle = 'hsla(' + s.hue + ',' + (s.saturation * 100) + '%,90%,' + (alpha * 0.25) + ')';
+          ctx.lineWidth = 0.5;
+          var flareLen = s.size * 3;
+          ctx.beginPath();
+          ctx.moveTo(drawX - flareLen, drawY);
+          ctx.lineTo(drawX + flareLen, drawY);
+          ctx.moveTo(drawX, drawY - flareLen);
+          ctx.lineTo(drawX, drawY + flareLen);
+          ctx.stroke();
+        }
+      }
+
+      // Shooting stars
+      if (Math.random() < 0.002) {
+        shootingStars.push(createShootingStar());
+      }
+
+      for (var j = shootingStars.length - 1; j >= 0; j--) {
+        var ss = shootingStars[j];
+        ss.x += ss.vx;
+        ss.y += ss.vy;
+        ss.life -= ss.decay;
+
+        if (ss.life <= 0 || ss.x > W || ss.y > H) {
+          shootingStars.splice(j, 1);
+          continue;
+        }
+
+        var speed2 = Math.sqrt(ss.vx * ss.vx + ss.vy * ss.vy);
+        var dirX = ss.vx / speed2;
+        var dirY = ss.vy / speed2;
+        var tailX = ss.x - dirX * ss.length;
+        var tailY = ss.y - dirY * ss.length;
+
+        var grad = ctx.createLinearGradient(tailX, tailY, ss.x, ss.y);
+        grad.addColorStop(0, 'rgba(255,255,255,0)');
+        grad.addColorStop(0.6, 'rgba(201,169,110,' + (ss.life * 0.4) + ')');
+        grad.addColorStop(1, 'rgba(255,255,255,' + ss.life + ')');
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = ss.size;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(tailX, tailY);
+        ctx.lineTo(ss.x, ss.y);
+        ctx.stroke();
+
+        ctx.fillStyle = 'rgba(255,255,255,' + (ss.life * 0.9) + ')';
+        ctx.beginPath();
+        ctx.arc(ss.x, ss.y, Math.max(0.1, ss.size * 1.2), 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    requestAnimationFrame(tick);
+  })();
+  </script>
+</body>
+</html>
